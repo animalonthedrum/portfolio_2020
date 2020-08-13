@@ -19,6 +19,7 @@ const Container = styled(motion.div)`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height:100px;
     .contact {
         justify-content:flex-end;
         display:flex;
@@ -72,10 +73,12 @@ const Footer = () =>{
         </div>
         <Marquee>
             <p>I have a goldendoodle named waffles and a long hair weiner dog named Mr.Weenie.</p>
-            <p>Currently turning a cargo van into a a camper, one tentius shot at a time.</p>
-            <p>I can speak Japanese.</p>
-            <p>I was once a touring drummer in a funk band.</p>
+            <p>Currently turning a cargo van into a camper, one tentius shot at a time.</p>
+            <p>I can speak Japanese, kind of.</p>
+            <p>I was once a touring drummer in a reggae funk band.</p>
             <p>I have a muppet as a tatoo.</p>
+            <p>Q: How do fish end their work emails? A: Let minnow what you think.</p>
+            <p>Send me a joke hello@brett.codes</p>
         </Marquee>
         <div className="contact">
             <a href="mailto:hello@brett.codes">hello@brett.codes</a>

@@ -1,20 +1,6 @@
 import styled from "styled-components"
 import {motion} from "framer-motion"
-
-const theme = {
-    night:{
-        bg:'#272525',
-        color:'#eee7ca',
-        accent:'#d08e43',
-        hover:'#e2be30'
-    },
-    day:{
-        bg:'#eee7ca',
-        color:'#272525',
-        accent:'#d08e43',
-        hover:'#e2be30'
-    }
-};
+import theme from './theme'
 
 export const HomeContainer = styled(motion.div)`
     background-color:${theme.day.bg};
@@ -22,11 +8,20 @@ export const HomeContainer = styled(motion.div)`
     height:100vh;
     max-height:100%;
     overflow:hidden;
-    transition: background-color .3s ease-in-out;
+    transition: background-color ${theme.ease};
     .night &{
         background-color:${theme.night.bg};
     }
 `
+export const Container = styled.div`
+    width:calc(100% - 100px);
+    max-width:${theme.maxWidth};
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:25px;
+    padding-bottom:25px;
+`
+
 export const HeaderDiv = styled(motion.div)`
     display:flex;
     width:calc(100% - 4vw);
@@ -38,6 +33,11 @@ export const HeaderDiv = styled(motion.div)`
         align-items:center;
         h3 {
             margin:0;
+            color:${theme.day.color};
+            transition:color ${theme.ease};
+            .night & {
+            color:${theme.night.color};
+            }
         }
     }
 `
@@ -53,8 +53,11 @@ export const HomeMenu = styled(motion.ul)`
     margin-inline-start: 0;
     margin-inline-end: 0;
 
-    li {
+    .item {
         display:flex;
+        :hover {
+            color:${theme.hover};
+        }
     }
     a {
         display:flex;
@@ -63,12 +66,17 @@ export const HomeMenu = styled(motion.ul)`
         font-size:50px;
         font-weight:700;
         text-transform:uppercase;
-        letter-spacing:12px;
-
-
-
+        letter-spacing:5px;
+        color:${theme.day.color};
+        transition:color ${theme.ease};
+        .night & {
+            color:${theme.night.color};
+        }
     }
     svg {
         width:100px;
+        path {
+            fill: ${theme.hover};
+        }
     }
 `

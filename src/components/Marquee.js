@@ -27,7 +27,7 @@ export const MarqueeContainer = styled(motion.div)`
         display: flex;
         align-items: center;
         height: 100%;
-        animation: ${marquee} 15s 1.2s linear infinite;
+        animation: ${marquee} 18s 3s linear infinite;
         p {
         font-family: "futura-pt", sans-serif;
         font-weight:400;

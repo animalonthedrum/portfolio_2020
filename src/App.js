@@ -1,42 +1,46 @@
-import React from 'react';
+import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-// import Header from './components/Header';
-import Home from './components/Home';
-import Links from './components/Links';
-import { AnimatePresence } from 'framer-motion';
-import Menu from './components/Menu/Menu'
+import {AnimatePresence} from 'framer-motion';
+
+//Components
+import Home from "./components/Home";
+import SE from "./components/pages/SE"
+import Ironman from "./components/pages/Ironman"
+import PgaJr from "./components/pages/PgaJr";
+import Hitch from "./components/pages/Hitch";
+import BN from "./components/pages/BN";
+import FT from "./components/pages/FT";
+
 function App() {
   const location = useLocation();
 
-
   return (
     <>
-      {/* <Header /> */}
-      <AnimatePresence exitBeforeEnter>
+      {/* <AnimatePresence exitBeforeEnter> */}
         <Switch location={location} key={location.key}>
-          <Route path="/sportsengine">
-          {/* <Home /> */}
+          <Route exact path="/sportsengine">
+            <SE />
           </Route>
-          <Route path="/ironman">
-          <Links/>
+          <Route exact path="/ironman">
+            <Ironman />
           </Route>
-          <Route path="/pgajr-league">
-          {/* <Menu/> */}
+          <Route exact path="/pgajr-league">
+            <PgaJr/>
           </Route>
-          <Route path="/hitch-adventures">
-          {/* <Home /> */}
-            </Route>
-            <Route path="/becca-neely">
-            {/* <Home /> */}
-            </Route>
-            <Route path="/frank-and-tawnee">
-            {/* <Home /> */}
-            </Route>
-          <Route path="/">
+          <Route exact path="/hitch-adventures">
+          <Hitch/>
+          </Route>
+          <Route exact path="/becca-neely">
+            <BN/>
+          </Route>
+          <Route exact path="/frank-and-tawnee">
+            <FT/>
+          </Route>
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </>
   );
 }
