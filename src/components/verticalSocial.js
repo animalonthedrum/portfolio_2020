@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import theme from '../styles/theme';
 
 const Container = styled(motion.div)`
-    transform: rotate(-90deg) translateX(100%);
+    transform: rotate(${(props) => (props.horizontal ? '0' : '-90deg')}) translateX(${(props) => (props.horizontal ? '0' : '100%')}) ;
     transform-origin: right bottom;
     position:fixed;
     bottom: 100px;
@@ -13,16 +13,46 @@ const Container = styled(motion.div)`
     z-index: 9;
     margin-bottom: 30px;
     transition: bottom 0.6s;
+    display:${(props) => (props.horizontal ? 'none' : 'flex')};
+    @media(max-width: ${theme.breakpoint.sm}) {
+        display:${(props) => (props.horizontal ? 'flex' : 'none')};
+        position:${(props) => (props.horizontal ? 'initial' : 'fixed')};
+        bottom:${(props) => (props.horizontal ? 'auto' : '100px')};
+        margin-bottom:0;
+        margin-top:20px;
+    }
     ul{
+      @media(max-width: ${theme.breakpoint.sm}) {
+         margin:0;
+         padding:0;
+         width:100%;
+         display:flex;
+        justify-content:center; 
+        li {
+          margin-left:0!important;
+        }
+    }
         svg {
             max-width: 25px;
             height: 25px;
             transform: rotate(90deg);
+            @media(max-width: ${theme.breakpoint.sm}) {
+               transform:rotate(0); 
+            }
             path {
                 fill:${theme.day.color};
+                transition: fill ${theme.ease};
+                @media(max-width: ${theme.breakpoint.sm}) {
+                fill:${(props) => (props.horizontal ? theme.night.color : theme.night.color)};
+                }
                 .night & {
                     fill:${theme.night.color};
                 }
+            }
+            :hover {
+              path {
+                fill:${theme.hover};
+              }
             }
         }
         list-style: none;
@@ -69,8 +99,8 @@ function Github() {
   );
 }
 
-const VerticalSocial = () => (
-  <Container className="vertical-text">
+const VerticalSocial = ({horizontal}) => (
+  <Container className="vertical-text" horizontal={horizontal}>
     <ul>
       <li>
         <a

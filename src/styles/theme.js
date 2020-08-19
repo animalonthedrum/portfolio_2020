@@ -11,6 +11,12 @@
         bg:'#eee7ca',
         color:'#272525',
         accent:'#d08e43',
+    },
+    breakpoint:{
+        xs:'400px',
+        sm:'719px',
+        md:'720px',
+        lg:'1025px'
     }
 };
 

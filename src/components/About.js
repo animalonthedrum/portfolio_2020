@@ -1,5 +1,6 @@
-import React from "react";
-import styled from 'styled-components';
+import React from "react"
+import styled from 'styled-components'
+
 // import { motion } from "framer-motion";
 
 //img
@@ -12,16 +13,22 @@ const Section = styled.div`
     width: 100%;
     display:flex;
     align-items:center;
-    height:calc(100% - 100px);
+    @media(max-width: ${theme.breakpoint.sm}) {
+    flex-direction:column;
+  }
+    /* height:calc(100% - 100px); */
     > div {
         flex: 1 1 50%;
+        @media(max-width: ${theme.breakpoint.sm}) {
+            flex:1 1 100%;
+        }
         h1 {
             color:${theme.day.color};
             font-family: "futura-pt", sans-serif;
             font-size:55px;
             font-weight:700;
             text-transform:uppercase;
-            letter-spacing:8px;
+            letter-spacing:2px;
             margin-top:0;
             .night & {
                 color:${theme.night.color};

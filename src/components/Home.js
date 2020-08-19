@@ -14,16 +14,24 @@ import useNightMode from "../hooks/use-night-theme";
 //Styles
 import theme from "../styles/theme";
 
+const HomePage = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Content = styled.div`
   display: ${(props) => (props.active ? "flex" : "none")};
   background-color: transparent;
-  height: calc(100vh - 100px);
+  height: 100%;
+  flex: 6;
+  justify-content: ${(props) => (props.center ? "center" : "flex-start")};
 `;
 
 const Header = styled.div`
   background-color: transparent;
   width: calc(100% - 100px);
-  max-width: ${theme.maxWidth};
+  /* max-width: ${theme.maxWidth}; */
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 25px;
@@ -32,8 +40,20 @@ const Header = styled.div`
   align-items: center;
   overflow: hidden;
   z-index:10;
+  flex:1;
+  margin:0 auto;
+  @media(max-width: ${theme.breakpoint.sm}) {
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   > div {
     flex: 1 1 50%;
+    @media(max-width: ${theme.breakpoint.sm}) {
+      flex:1 1 auto;
+    }
   }
   span {
     color: ${theme.day.color};
@@ -54,16 +74,18 @@ const Tab = styled.button`
   color: ${theme.day.color};
   cursor: pointer;
   font-family: "futura-pt", sans-serif;
-  font-weight: ${(props) => (props.active ? "700" : "500")};
+  font-weight: 500;
+  transform: scale(${(props) => (props.active ? "1.1" : "1")});
   font-size: 20px;
-  box-shadow: ${(props) => (props.active ? "0 4px 0 0 #e2be30" : "")};
-  transition: border-bottom ${theme.ease}, color ${theme.ease};
+  box-shadow: ${(props) =>
+    props.active ? "0 4px 0 0 #e2be30" : "0 0 0 0 #e2be30"};
+  transition: box-shadow ${theme.ease}, color ${theme.ease},
+    transform ${theme.ease}, font ${theme.ease};
   .night & {
     color: ${theme.night.color};
   }
   :hover {
     cursor: pointer;
-    font-weight: 700;
   }
 `;
 
@@ -78,7 +100,7 @@ function Home() {
     }
   };
   return (
-    <div>
+    <HomePage>
       <Header>
         <div>
           <Tab onClick={handleClick} active={active === 0} id={0}>
@@ -94,12 +116,12 @@ function Home() {
       <Content active={active === 0}>
         <Projects />
       </Content>
-      <Content active={active === 1}>
-       <About/>
+      <Content active={active === 1} center="center">
+        <About />
       </Content>
       <Footer />
-      <VerticalSocial/>
-    </div>
+      <VerticalSocial />
+    </HomePage>
   );
 }
 

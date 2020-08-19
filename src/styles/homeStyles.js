@@ -20,6 +20,21 @@ export const Container = styled.div`
     padding-right:50px;
     padding-top:25px;
     padding-bottom:25px;
+    @media(max-width: ${theme.breakpoint.md}) {
+        width:calc(100% - 40px);
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:25px;
+        padding-bottom:25px;
+    }
+
+    @media(max-width: ${theme.breakpoint.sm}) {
+        width:calc(100% - 30px);
+        padding-left:15px;
+        padding-right:15px;
+        padding-top:25px;
+        padding-bottom:25px;
+    }
 `
 
 export const HeaderDiv = styled(motion.div)`
@@ -55,6 +70,9 @@ export const HomeMenu = styled(motion.ul)`
 
     .item {
         display:flex;
+        @media(max-width: ${theme.breakpoint.sm}) {
+            transform: translateX(0) translateZ(0px)!important;   
+        }
         :hover {
             color:${theme.hover};
         }
@@ -69,12 +87,26 @@ export const HomeMenu = styled(motion.ul)`
         letter-spacing:5px;
         color:${theme.day.color};
         transition:color ${theme.ease};
+        @media(max-width: ${theme.breakpoint.md}) {
+            font-size:38px;
+        }
+
+        @media(max-width: ${theme.breakpoint.sm}) {
+            font-size:28px;
+        }
         .night & {
             color:${theme.night.color};
         }
     }
     svg {
         width:100px;
+        @media(max-width: ${theme.breakpoint.md}) {
+            display:none;
+        }
+        
+        @media(max-width: ${theme.breakpoint.sm}) {
+            display:none;
+        }
         path {
             fill: ${theme.hover};
         }
