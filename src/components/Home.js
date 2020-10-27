@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion"; 
 
 //Components
 import ToggleButton from "./toggleButton";
@@ -78,7 +79,7 @@ const Tab = styled.button`
   transform: scale(${(props) => (props.active ? "1.1" : "1")});
   font-size: 20px;
   box-shadow: ${(props) =>
-    props.active ? "0 4px 0 0 #e2be30" : "0 0 0 0 #e2be30"};
+    props.active ? "inset 0 -6px 0 0 #e2be30" : "0 0 0 0 #e2be30"};
   transition: box-shadow ${theme.ease}, color ${theme.ease},
     transform ${theme.ease}, font ${theme.ease};
   .night & {
@@ -101,6 +102,13 @@ function Home() {
   };
   return (
     <HomePage>
+    <motion.div
+    style={{
+      opacity:0,
+      y:-100,
+      }}
+    animate={{ opacity: 1, y:0 }}
+    transition={{ duration: 2, ease:"easeInOut" }}>
       <Header>
         <div>
           <Tab onClick={handleClick} active={active === 0} id={0}>
@@ -113,14 +121,34 @@ function Home() {
         </div>
         <ToggleButton nightMode={nightMode} setNightMode={setNightMode} />
       </Header>
+      </motion.div>
       <Content active={active === 0}>
         <Projects />
       </Content>
       <Content active={active === 1} center="center">
         <About />
       </Content>
+      <motion.div
+    style={{
+      opacity:0,
+      y:100,
+      }}
+    animate={{ opacity: 1, y:0 }}
+    transition={{ 
+      duration: 1, 
+      ease:"easeInOut",
+      y:{ type: "spring", duration:1, bounce: 0.5 }, }}>
       <Footer />
+      </motion.div>
+      <motion.div
+    style={{
+      opacity:0,
+      x:100,
+      }}
+    animate={{ opacity: 1, x:0 }}
+    transition={{ duration: 1, delay:3, ease:"easeInOut" }}>
       <VerticalSocial />
+      </motion.div>
     </HomePage>
   );
 }

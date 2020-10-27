@@ -63,7 +63,8 @@ const Section = styled.div`
     <Container>
     <Section>
     <div>
-    <h1>HELLO I'm Brett</h1>
+    <h1>
+    <span role="img" aria-label="woogity woogity" aria-labelledby="wave">👋</span> Hi, I'm Brett</h1>
     <p>Web developer residing in Minneapolis, currently employed full time at Sportsengine. I dig all things funky, hiking, camping and my doggos.</p>
     <p>Currently renovating a Ram Promaster Cargo van to a camper van.</p>
     <p>This site was built with React, Framer Motion and Styled Components for fun, sharing and learning. Thanks for visiting. Stay funky, keep nature wild. <span role="img" aria-label="woogity woogity" aria-labelledby="wave">🤙</span></p>

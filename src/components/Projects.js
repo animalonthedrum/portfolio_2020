@@ -10,38 +10,38 @@ const navRoutes = [
   {
     id: 0,
     title: "SportsEngine",
-    // path: "/sportsengine",
-    path: "https://www.sportsengine.com/",
+    path: "/sportsengine",
+    // path: "https://www.sportsengine.com/",
   },
   {
     id: 1,
     title: "IRONMAN",
-    // path: "/ironman",
-    path: "https://www.ironman.com/",
+    path: "/ironman",
+    // path: "https://www.ironman.com/",
   },
   {
     id: 2,
     title: "PGAJr League",
-    // path: "/pgajr-league",
-    path: "https://www.pgajrleague.com/",
+    path: "/pgajr-league",
+    // path: "https://www.pgajrleague.com/",
   },
   {
     id: 3,
     title: "Hitch Adventures",
-    // path: "/hitch-adventures",
-    path: "https://www.hitchadventures.com/",
+    path: "/hitch-adventures",
+    // path: "https://www.hitchadventures.com/",
   },
   {
     id: 4,
     title: "Becca Neely",
-    // path: "/becca-neely",
-    path: "https://www.beccaneely.com/",
+    path: "/becca-neely",
+    // path: "https://www.beccaneely.com/",
   },
   {
     id: 5,
     title: "Frank & Tawnee",
-    // path: "/frank-tawnee",
-    path: "https://frankandtawnee.com/",
+    path: "/frank-tawnee",
+    // path: "https://frankandtawnee.com/",
   }
 ]
 
@@ -53,7 +53,7 @@ const Projects = ( ) => {
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 0.5,
+        delay: 1.2,
         when: "beforeChildren",
         staggerChildren: 0.3,
       },
@@ -85,8 +85,8 @@ const Projects = ( ) => {
       >
         {navRoutes.map((route) => (
           <motion.li className='item' key={route.id} variants={listVariants}>
-            {/* <Link to={`${route.path}`}> */}
-            <a href={route.path} target='_blank'>
+            <Link to={`${route.path}`}>
+            {/* <a href={route.path} target='_blank'> */}
               <motion.div className='item'
                 initial={{ x: -100 }}
                 whileHover={{
@@ -112,8 +112,8 @@ const Projects = ( ) => {
                 </div>
                 {route.title}
               </motion.div>
-            {/* </Link> */}
-            </a>
+            </Link>
+            {/* </a> */}
           </motion.li>
         ))}
       </HomeMenu>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 
 //Components
+import LoadingScreen from "./components/LoadingScreen";
 import Home from "./components/Home";
 import SE from "./components/pages/SE"
 import Ironman from "./components/pages/Ironman"
@@ -12,11 +13,17 @@ import BN from "./components/pages/BN";
 import FT from "./components/pages/FT";
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000)
+  }, [])
 
   return (
     <>
-      {/* <AnimatePresence exitBeforeEnter> */}
+    {loading === false ? (
+      
         <Switch location={location} key={location.key}>
           <Route exact path="/sportsengine">
             <SE />
@@ -40,8 +47,11 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      {/* </AnimatePresence> */}
-    </>
+     
+      ) : (
+        <LoadingScreen />
+      )}
+      </>
   );
 }
 
