@@ -17,14 +17,14 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000)
+    setTimeout(() => setLoading(false), 2000)
   }, [])
 
   return (
     <>
     {loading === false ? (
-      
-        <Switch location={location} key={location.key}>
+      <AnimatePresence>
+        <Switch location={location} key={location.kay}>
           <Route exact path="/sportsengine">
             <SE />
           </Route>
@@ -47,6 +47,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        </AnimatePresence>
      
       ) : (
         <LoadingScreen />

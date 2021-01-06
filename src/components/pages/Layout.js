@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -49,9 +49,34 @@ border:0;
 outline:none;
 `
 
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  }
+};
+
+const pageTransition = {
+  type: "tween",
+  ease: "easeInOut",
+  duration: .5
+};
+
+
 const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prevTitle, href}) => {
   return (
-    <Fragment>
+    <motion.div
+    initial="initial"
+    animate="in"
+    exit="out"
+    variants={pageVariants}
+    transition={pageTransition}
+  >
     <Container className="container">
       <NavBar nextUrl={nextUrl} prevUrl={prevUrl} nextTitle={nextTitle} prevTitle={prevTitle} />
       <Header>
@@ -68,7 +93,7 @@ const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prev
       </Button>
     </Container>
     <Footer />
-    </Fragment>
+    </motion.div>
   );
 };
 

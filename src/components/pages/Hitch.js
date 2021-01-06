@@ -18,7 +18,7 @@ const Hitch = () =>{
     return (
         <Layout 
         headline={data.headline} 
-        subHead
+        subHead={data.subHead}
         nextUrl={data.nextUrl} 
         nextTitle={data.nextTitle} 
         prevUrl={data.prevUrl} 

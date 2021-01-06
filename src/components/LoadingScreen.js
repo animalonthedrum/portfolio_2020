@@ -14,7 +14,7 @@ function LoadingScreen() {
                 alignItems:"center"
             }}
             animate={{ opacity: 1}}
-            transition={{ duration: 3.1 }}
+            transition={{ duration: 2.1 }}
         >
             <motion.div
                 style={{
@@ -29,8 +29,8 @@ function LoadingScreen() {
                     scale:[2, 1, 2, 1, 2, 0],
                 }}
                 transition={{ 
-                    duration: 3, 
-                    scale:{ type: "spring", duration:2.8, bounce: 0.7 }
+                    duration: 2, 
+                    scale:{ type: "spring", duration:1.8, bounce: 0.3 }
                     }}
             />
         </motion.div>
