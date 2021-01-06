@@ -11,13 +11,15 @@ import theme from "../../styles/theme";
 const Container = styled(motion.div)`
   width: calc(100% - 100px);
   max-width: ${theme.maxWidth};
+  margin-left:auto;
+  margin-right:auto;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 50px;
   padding-bottom: 25px;
   height:100%;
   min-height:calc(100vh - 100px);
-  background-color:#fff;
+  background-color:${theme.day.bg};
 `;
 const Header = styled.div`
   display:flex;
@@ -42,27 +44,12 @@ const SubHead = styled.h4`
   letter-spacing: 1px;
 `;
 
-const Hero = styled.div`
-  width:100%;
-  max-width:calc(100% - 40px);
-  padding-right:20px;
-  padding-left:20px;
-  a {
-    width:100%;
-    height:100%;
-  }
-  img {
-    width:100%;
-    height:auto;
-  }
-`;
-
 const Button = styled.button`
 border:0;
 outline:none;
 `
 
-const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prevTitle, img, imgAlt, href}) => {
+const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prevTitle, href}) => {
   return (
     <Fragment>
     <Container className="container">
@@ -75,14 +62,9 @@ const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prev
       {subHead}
       </SubHead>
       </Header>
-      <Hero>
-        <a href={href}>
-          <img src={img} alt={imgAlt}/>
-        </a>
-      </Hero>
       {children}
       <Button>
-      <a href={href}>CHECK IT OUT</a>
+      <a href={href} target="_blank"  rel="noopener noreferrer">Visit {headline}</a>
       </Button>
     </Container>
     <Footer />

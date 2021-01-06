@@ -116,7 +116,7 @@ const Footer = () => {
         </p>
       </Marquee>
       <div className="contact">
-        <a href="mailto:hello@brett.codes">hello@brett.codes</a>
+        <a href="mailto:miller.brett.andrew@gmail.com">miller.brett.andrew@gmail.com</a>
       </div>
       <VerticalSocial horizontal='true'/>
     </Container>
