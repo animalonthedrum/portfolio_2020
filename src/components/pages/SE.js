@@ -48,6 +48,7 @@ const SE = () =>{
         nextTitle={data.nextTitle} 
         prevUrl={data.prevUrl} 
         prevTitle={data.prevTitle} 
+        href={data.href}
         >
         <motion.div
         style={{
