@@ -24,10 +24,8 @@ const Container = styled(motion.div)`
     font-family: "futura-pt", sans-serif;
     font-size: 18px;
     font-weight: 500;
+    max-width:750px;
     letter-spacing: 1px;
-    &:first-of-type {
-      text-indent:10px;
-    }
     b {
       font-family: "futura-pt", sans-serif;
       font-size: 20px;
@@ -44,12 +42,12 @@ const Header = styled.div`
   display:flex;
   flex-wrap:wrap;
   align-items:baseline;
-  justify-content:flex-start;
+  justify-content:center;
 `; 
 
 const Headline = styled.h1`
   font-family: "futura-pt", sans-serif;
-  font-size: 50px;
+  font-size: 42px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -71,7 +69,7 @@ const Headline = styled.h1`
 `;
 const SubHead = styled.h4`
   font-family: "futura-pt", sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 1px;
 `;
@@ -137,6 +135,11 @@ a {
 }
 `
 
+const Section = styled.div`
+max-width:750px;
+margin: 0 auto;
+`
+
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -167,6 +170,7 @@ const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prev
   >
     <Container className="container">
       <NavBar nextUrl={nextUrl} prevUrl={prevUrl} nextTitle={nextTitle} prevTitle={prevTitle} />
+      <Section>
       <Header>
       <Headline>
       <a href={href}>{headline}</a>
@@ -195,6 +199,7 @@ const Layout = ({ children, headline, subHead, nextUrl, nextTitle, prevUrl, prev
       </a>
       </Button>
       </Flex>
+      </Section>
     </Container>
     <Footer />
     </motion.div>

@@ -2,12 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Layout from "./Layout";
 import styled from "styled-components";
+import {motion} from 'framer-motion'
 import img from "../../assets/images/SE/SE_home.jpg"
 
 
 const data = {
     headline:'Sportsengine',
-    subHead:'the home of youth sports.',
+    subHead:'the home of youth sports',
     nextUrl:'/ironman',
     nextTitle:'Next project',
     prevUrl:'/',
@@ -48,6 +49,17 @@ const SE = () =>{
         prevUrl={data.prevUrl} 
         prevTitle={data.prevTitle} 
         >
+        <motion.div
+        style={{
+            opacity:0,
+            y:50,
+            }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ 
+            duration: .2, 
+            ease:"easeInOut",
+            y:{ type: "spring", duration:.2, bounce: 0.2}, }}
+        >
         <p>Over the three years at Sportsengine I have had the opportunity to build hundreds of custom websites, landing pages, integrate with multiple API's, develop custom modules and work both on the front and backend of our Drupal applications. My projects ranged from client site theming, maintenance, site builds, internal marketing campaigns, API architecture and developing a new sportsengine.com product. </p>
         <br/>
         <p><b>Tech:</b> JS, jQuery, PHP, Drupal, Twig, HTML5, SCSS, Jekyll, Liquid, Ajax, API's, Symfony, Redis, Angular, Typescript, AWS, gulp, git, Jira, Sketch, Zeplin and more.</p>
@@ -61,6 +73,7 @@ const SE = () =>{
             <li><a href="https://www.uslsoccer.com/" target="_blank"  rel="noopener noreferrer">USL Soccer</a></li>
             <li><a href="https://www.easternhockeyleague.org/" target="_blank"  rel="noopener noreferrer">Eastern Hockey League</a></li>
         </List>
+        </motion.div>
         </Layout>
     )
 }

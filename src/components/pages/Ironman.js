@@ -45,7 +45,17 @@ const Ironman = () =>{
         prevTitle={data.prevTitle}
         href={data.href}
         >
-        <motion.div>
+        <motion.div
+        style={{
+            opacity:0,
+            y:50,
+            }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ 
+            duration: .2, 
+            ease:"easeInOut",
+            y:{ type: "spring", duration:.2, bounce: 0.2}, }}
+        >
         <p>Sportsengine partnered with IRONMAN (World Triathlon Corporation) to overhaul/design and build their flagship site&mdash; which was almost a decade old and came with out-dated user experience trends, functionality issues and cumbersome administration processes. The project focused on restructuring content and design to be athlete-first as well as streamlining the experience to get athletes to race info and registrations faster.</p>
         <p>After many, many, rounds of design revisions and POC's, I had the green light to begin theming and building their site. There were many SportsEngine firsts on this one that needed innovative solutions. Some of these highlights were:</p>
         <List>

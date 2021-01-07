@@ -23,7 +23,17 @@ const PgaJr = () =>{
         prevTitle={data.prevTitle} 
         href={data.href}
         >
-        <motion.div>
+        <motion.div
+        style={{
+            opacity:0,
+            y:50,
+            }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ 
+            duration: .2, 
+            ease:"easeInOut",
+            y:{ type: "spring", duration:.2, bounce: 0.2}, }}
+        >
         <p>In the fall of 2019, long term partner, PGA Jr League tasked Sportsengine to rebuild their website and improve their program search functionality. We collaborated with stakeholders from PGAJ r League to examine the pain points from their previous site, create wireframes/mockups and outline the user experience/customer path to registration.</p>
         <p> After mockups were approved I started building the search functionality and styling of the site. The previous program search was one of their biggest pain points so the biggest goal was to make that process easier for users. Fast forward to launch day - over 1500 users registered for programs breaking the single day sign up record. </p> 
         <p>Designed by <a href='http://www.seanmcgrathdesign.com/' target='_blank' rel="noopener noreferrer">Sean McGrath</a></p>

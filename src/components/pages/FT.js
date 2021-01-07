@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 
 const data = {
     headline:'Frank & Tawnee',
-    subHead:'website build',
+    subHead:'wedding site',
     nextUrl:'/sportsengine',
     nextTitle:'Next project',
     prevUrl:'/becca-neely',
@@ -18,14 +18,24 @@ const FT = () =>{
     return (
         <Layout 
         headline={data.headline} 
-        subHead
+        subHead={data.subHead}
         nextUrl={data.nextUrl} 
         nextTitle={data.nextTitle} 
         prevUrl={data.prevUrl} 
         prevTitle={data.prevTitle}
         href={data.href}
         >
-        <motion.div>
+        <motion.div
+        style={{
+            opacity:0,
+            y:50,
+            }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{ 
+            duration: .2, 
+            ease:"easeInOut",
+            y:{ type: "spring", duration:.2, bounce: 0.2}, }}
+        >
         <p>Wedding site for a close designer buddy. This site was used to gather rsvps and showcase a beautiful, soon to be married couple. Frank and I collabed to create a site with animations and beautiful design.</p>
         <p> I challenged myself with a tight deadline and a technology I had just started learning. This was one of my first React sites and I had a lot of fun turning the mockup into markup.</p>
         <p>Designed by <a href="https://www.frankdenneycreative.com/" target="_blank"  rel="noopener noreferrer">Frank Denney</a></p>

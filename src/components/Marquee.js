@@ -36,7 +36,7 @@ export const MarqueeContainer = styled(motion.div)`
       font-weight: 400;
       font-size: 24px;
       color: #e2be30;
-      letter-spacing: 5px;
+      letter-spacing: 2px;
       text-decoration: none;
     }
   }
