@@ -24,7 +24,7 @@ function App() {
     <Fragment>
     {loading === false ? (
       <AnimatePresence>
-        <Switch location={location} key={location.kay}>
+        <Switch location={location} key={location.key}>
           <Route exact path="/sportsengine">
             <SE />
           </Route>
@@ -52,7 +52,7 @@ function App() {
       ) : (
         <LoadingScreen />
       )}
-      </Fragment>
+        </Fragment>
   );
 }
 

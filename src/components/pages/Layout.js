@@ -148,14 +148,14 @@ const pageVariants = {
     opacity: 1,
   },
   out: {
-    opacity: 0.7,
+    opacity: 0,
   }
 };
 
 const pageTransition = {
   type: "tween",
   ease: "easeInOut",
-  duration: .5
+  duration: .2
 };
 
 

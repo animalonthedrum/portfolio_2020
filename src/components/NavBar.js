@@ -56,7 +56,6 @@ const Container = styled.div`
 `
 
 const Navbar = ({nextUrl, nextTitle, prevUrl, prevTitle}) => (
-    // <Container className={`navbar ${hide ? hide : ""}`}>
     <Container className='navbar'>
         <ul>
             <li key='prev' className='prevPage'>
