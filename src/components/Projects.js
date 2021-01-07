@@ -40,7 +40,7 @@ const navRoutes = [
   {
     id: 5,
     title: "Frank & Tawnee",
-    path: "/frank-tawnee",
+    path: "/frank-and-tawnee",
     // path: "https://frankandtawnee.com/",
   }
 ]
