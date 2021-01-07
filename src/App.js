@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import {AnimatePresence} from 'framer-motion';
 
@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <Fragment>
     {loading === false ? (
       <AnimatePresence>
         <Switch location={location} key={location.kay}>
@@ -52,7 +52,7 @@ function App() {
       ) : (
         <LoadingScreen />
       )}
-      </>
+      </Fragment>
   );
 }
 
