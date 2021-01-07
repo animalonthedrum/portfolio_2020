@@ -75,7 +75,6 @@ const Projects = ( ) => {
   };
 
   return (
-    <>
     <Container>
       <HomeMenu
         variants={menuVariants}
@@ -118,7 +117,6 @@ const Projects = ( ) => {
         ))}
       </HomeMenu>
       </Container>
-    </>
   )
 }
 

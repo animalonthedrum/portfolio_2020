@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from "./Layout";
-import styled from 'styled-components';
 import {motion} from 'framer-motion'
 
 
@@ -11,7 +10,7 @@ const data = {
     nextTitle:'Next project',
     prevUrl:'/pgajr-league',
     prevTitle:'Prev project',
-    href:'https://www.hitchadventures.com/'
+    href:'https://hitch-adventures.web.app/'
 }
 
 const Hitch = () =>{
