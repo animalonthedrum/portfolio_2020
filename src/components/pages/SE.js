@@ -11,20 +11,27 @@ const data = {
     nextUrl:'/ironman',
     nextTitle:'Next project',
     prevUrl:'/',
-    prevTitle:'Back to projects',
+    prevTitle:'Projects',
     img:img,
     imgAlt:'the new Sportsengine homepage',
     href:'https://www.sportsengine.com/'
 }
 const List = styled.ul`
 display:flex;
-flex-direction:column;
+flex-wrap:wrap;
+align-items:center;
 padding:0;
 margin:0;
 list-style:none;
+font-family: "futura-pt", sans-serif;
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 1px;
 li {
     padding-top:10px;
     padding-bottom:10px;
+    padding-left:5px;
+    padding-right:5px;
     a {
         color:black;
     }
@@ -41,14 +48,12 @@ const SE = () =>{
         prevUrl={data.prevUrl} 
         prevTitle={data.prevTitle} 
         >
-        <p>
-            Over my three years with Sportsengine I have had the opportunity to build hundreds of custom websites, landing pages, integrate with multiple API's, develop custom modules and work both on the front and backend of our Drupal applications. My projects ranged from client site theming, maintenance, site builds, internal marketing campaigns, API architecture and developing a new sportsengine.com product. 
-        </p>
+        <p>Over the three years at Sportsengine I have had the opportunity to build hundreds of custom websites, landing pages, integrate with multiple API's, develop custom modules and work both on the front and backend of our Drupal applications. My projects ranged from client site theming, maintenance, site builds, internal marketing campaigns, API architecture and developing a new sportsengine.com product. </p>
         <br/>
-        <p>Technologies used were JS, jQuery, PHP, Drupal, Twig, HTML5, SCSS, Jekyll, Liquid, Ajax, API's, Symfony, gulp, git, Jira, Sketch, Zeplin and more.</p>
-        <p>Some of my favorite projects are <b><a href='https://www.sportsengine.com' target="_blank"  rel="noopener noreferrer">Sportsengine</a>, </b> <b><a href='https://www.sportsengine.com/solutions' target="_blank"  rel="noopener noreferrer">Sportsengine HQ</a></b>, <b><Link to='/ironman'>IRONMAN</Link></b> and <b><Link to='/pgajr-league'>PGA JR League</Link></b></p>
+        <p><b>Tech:</b> JS, jQuery, PHP, Drupal, Twig, HTML5, SCSS, Jekyll, Liquid, Ajax, API's, Symfony, Redis, Angular, Typescript, AWS, gulp, git, Jira, Sketch, Zeplin and more.</p>
+        <p><b>Some of my favorite projects:</b> <b><a href='https://www.sportsengine.com' target="_blank"  rel="noopener noreferrer">Sportsengine</a>, </b> <b><a href='https://www.sportsengine.com/solutions' target="_blank"  rel="noopener noreferrer">Sportsengine HQ</a></b>, <b><Link to='/ironman'>IRONMAN</Link></b> and <b><Link to='/pgajr-league'>PGA JR League</Link></b></p>
         <List>
-            Other noteable works include
+            <b>Other noteable works:</b>
             <li><a href="https://www.gomotionapp.com/solutions" target="_blank"  rel="noopener noreferrer">GoMotion</a></li>
             <li><a href="https://www.teamunify.com/swim-team-management-software/mobile/" target="_blank"  rel="noopener noreferrer">Team Unify</a></li>
             <li><a href="https://uk.teamunify.com/solutions" target="_blank"  rel="noopener noreferrer">Team Unify UK</a></li>

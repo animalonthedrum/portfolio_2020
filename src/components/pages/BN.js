@@ -28,7 +28,7 @@ const BN = () =>{
         <motion.div>
         <p>Portfolio site for a very talented designer who also happens to be my partner. I really enjoyed working in Gatsby and using mutation observer to add subtle slide up animations. I will likely continue using Gatsby in my future freelance builds.</p>
 
-        <p>Technologies: GatsbyJS, SCSS, Netlify</p>
+        <p><b>Tech:</b> GatsbyJS, SCSS, Netlify</p>
          </motion.div>
         </Layout>
     )

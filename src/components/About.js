@@ -16,7 +16,6 @@ const Section = styled.div`
     @media(max-width: ${theme.breakpoint.sm}) {
     flex-direction:column;
   }
-    /* height:calc(100% - 100px); */
     > div {
         flex: 1 1 50%;
         @media(max-width: ${theme.breakpoint.sm}) {
@@ -43,6 +42,16 @@ const Section = styled.div`
             .night & {
                 color:${theme.night.color};
             }
+            a {
+                font-family: "futura-pt", sans-serif;
+                font-size:24px;
+                font-weight:500;
+                letter-spacing:2px;
+                color:${theme.day.color};
+                .night & {
+                    color:${theme.night.color};
+                }
+            }
         }
     }
     .image-container {
@@ -63,11 +72,10 @@ const Section = styled.div`
     <Container>
     <Section>
     <div>
-    <h1>
-    <span role="img" aria-label="woogity woogity" aria-labelledby="wave">👋</span> Hi, I'm Brett</h1>
-    <p>Web developer residing in Minneapolis, currently employed full time at Sportsengine. I dig all things funky, hiking, camping and my doggos.</p>
-    <p>Currently renovating a Ram Promaster Cargo van to a camper van.</p>
-    <p>This site was built with React, Framer Motion and Styled Components for fun, sharing and learning. Thanks for visiting. Stay funky, keep nature wild. <span role="img" aria-label="woogity woogity" aria-labelledby="wave">🤙</span></p>
+    <h1><span role="img" aria-label="woogity woogity" aria-labelledby="wave">👋</span> Hi, I'm Brett</h1>
+    <p>Creative developer currently residing in Minneapolis, MN. I dig CSS, animating divs, problem solving, and learning new tech. On a personal level, drums, vinyl, hiking and card games are my jam. I am currently employed at SportsEngine on the creative marketing team.</p>
+    <p>During quarantine my partner and I purchased a Promaster Cargo van and have been turning it into an off grid camper. Follow along with our progress <a href="https://www.instagram.com/thesacredroute/" target="_blank"  rel="noopener noreferrer">here</a></p>
+    <p>This site was built with React, Framer Motion and Styled Components. Thanks for visiting. Stay funky, wear a mask and keep nature wild. <span role="img" aria-label="woogity woogity" aria-labelledby="wave">🤙</span></p>
     </div>
     <div className='image-container'>
     <img src={headshot} alt="Felt cute might delete later"/>
